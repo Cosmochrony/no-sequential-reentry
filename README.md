@@ -49,8 +49,8 @@ about one second in total:
 
 ## Status
 
-Unpublished draft (branch `0.1`).
-No release cascade has been triggered.
+Published working paper (v1.0), concept DOI [10.5281/zenodo.21381089](https://doi.org/10.5281/zenodo.21381089).
+
 
 ## Compilation
 

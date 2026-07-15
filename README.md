@@ -11,22 +11,26 @@ candidates for the missing fermionic weak-isospin carrier of the Cosmochrony cor
   two parity projectors, so no non-abelian connected action commutes with the Weil
   action on `V_c`; the canonical Hecke `M_2(C)` doublets of `End(V_c)` have no
   fermionic lift to their own carrier.
-- Erased-fibre structure: the oriented Cayley alphabet has stabiliser exactly `C4`;
+- Erased-fibre structure: the symmetric Cayley alphabet has stabiliser exactly `C4`;
   the fibre of the canonical projective channel over a `b`-shadow with `r` zero-runs is
-  exactly `(Z2)^r`; the canonical inductions of the history space carry only
-  near-regular multiplicities, with no privileged `M_2(C)` factor.
+  canonically a torsor under the abelian run-flip group `(Z2)^r`; the canonical
+  inductions of the history space carry only near-regular multiplicities, with no
+  privileged `M_2(C)` factor.
 - Alternating transport and axis exchange: the flip-antisymmetric fibre line maps
   exactly to the parity-odd operator sector, but the two odd Hermitian axes
   `i(A_X +- A_Y)` are exchanged by a semilinear automorphism of the cocycle-enriched
   Heisenberg--Weil datum, implemented by the deposited antiunitary `RK`; no natural
   selector exists, and the coordinate formula that selects one is conditional on an
   oriented central/Weyl pinning.
-- No-sequential-re-entry theorem: the channel acts on amplitudes as a conditional
-  expectation `P`, and `Pv = 0 => QPv = 0` for every downstream linear `Q`; no tower of
-  sequential projections recovers the erased alternating character.
-- Architectural dichotomy: any realisation requires a parallel channel from the
-  pre-projection space plus an orientation of `(Z, w)` --- two new axioms, hence an
-  extension architecture, not a derivation.
+- No-sequential-re-entry theorem: the canonical record quotient satisfies
+  `pi v = 0 => Q pi v = 0` for every downstream linear `Q`, and the channel's
+  conditional expectations annihilate the mu-centred fibre differences for every
+  non-degenerate measure; no tower of sequential projections recovers the erased
+  alternating character.
+- Architectural dichotomy (history-fibre route): realisation requires a parallel
+  channel from the pre-projection space plus an orientation of `(Z, w)` --- two new
+  ingredients, or one new axiom supplying both; an independent new carrier outside the
+  deposited corpus remains a distinct, unconstrained extension architecture.
 
 ## Reproducibility
 
@@ -39,7 +43,8 @@ about one second in total:
 - `front_axis_selector.py`: enriched-data symmetry table, `RK` intertwining and
   `RK F RK = F^{-1}`, conditional coordinate-pinned selector, single-line support
   obstruction;
-- `front_joint_reentry_audit.py`: exact rational two-point fibre algebra, no-re-entry
+- `front_joint_reentry_audit.py`: exact rational two-point fibre algebra (uniform and
+  non-uniform conditional expectations, mu-centred kernel line), no-re-entry
   implication, exhaustive Heisenberg-automorphism check at `q = 5`.
 
 ## Status

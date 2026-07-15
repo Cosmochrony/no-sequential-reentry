@@ -60,6 +60,38 @@ def audit_conditional_expectation():
     }
 
 
+def audit_nonuniform_measure():
+    """A non-uniform conditional expectation does not kill the alternating vector;
+    it kills its mu-centred version, and its kernel is the mu-centred line."""
+    mu = [Fraction(1, 3), Fraction(2, 3)]
+    projection = [[mu[0], mu[1]], [mu[0], mu[1]]]
+    alternating = [Fraction(1), Fraction(-1)]
+
+    image = mat_vec(projection, alternating)
+    assert image == [Fraction(-1, 3), Fraction(-1, 3)]
+
+    mean = mu[0] * alternating[0] + mu[1] * alternating[1]
+    centred = [component - mean for component in alternating]
+    assert mat_vec(projection, centred) == [0, 0]
+
+    kernel_direction = [mu[1], -mu[0]]
+    assert mat_vec(projection, kernel_direction) == [0, 0]
+    scale = centred[0] / kernel_direction[0]
+    assert [scale * component for component in kernel_direction] == centred
+
+    # The endpoint-odd functional stays non-zero on the mu-centred vector, so the
+    # transport does not factor through the non-uniform expectation either.
+    endpoint_odd = [[Fraction(1), Fraction(-1)]]
+    assert mat_vec(endpoint_odd, centred) == [Fraction(2)]
+
+    return {
+        "nonuniform_expectation_kills_alternating": False,
+        "mu_centred_version_in_kernel": True,
+        "kernel_is_mu_centred_line": True,
+        "endpoint_odd_nonzero_on_centred_vector": True,
+    }
+
+
 def audit_sigma_x(q=5):
     elements = [(a, b, z) for a in range(q) for b in range(q) for z in range(q)]
     for g in elements:
@@ -77,9 +109,15 @@ def audit_sigma_x(q=5):
 
 def main():
     ce = audit_conditional_expectation()
+    nu = audit_nonuniform_measure()
     sx = audit_sigma_x()
     print("== Joint re-entry audit: exact algebra ==")
-    print(f"  Conditional expectation kills alternating fibre line: {ce['conditional_expectation_kills_it']}")
+    print(f"  Uniform conditional expectation kills alternating fibre line: {ce['conditional_expectation_kills_it']}")
+    print(f"  Non-uniform expectation kills it: {nu['nonuniform_expectation_kills_alternating']}"
+          f" (mu-centred version in kernel: {nu['mu_centred_version_in_kernel']},"
+          f" kernel = mu-centred line: {nu['kernel_is_mu_centred_line']})")
+    print(f"  Endpoint odd map non-zero on the centred vector: "
+          f"{nu['endpoint_odd_nonzero_on_centred_vector']}")
     print(f"  Endpoint odd map is non-zero on the same line: {ce['endpoint_odd_map_is_nonzero_on_it']}")
     print(f"  Factorisation through D4 is impossible: {ce['factorisation_through_D4_impossible']}")
     print(f"  Any sequential second projection still kills it: {ce['sequential_second_projection_cannot_restore_it']}")

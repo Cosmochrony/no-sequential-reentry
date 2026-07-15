@@ -70,28 +70,35 @@ Four exact obstructions are established.
 First, the commutant of the finite Weil module is spanned by the two parity projectors,
 so every connected unitary action commuting with the Weil action on $\Vc$ is abelian: the
 operator doublets admit no fermionic lift to their own carrier.
-Second, the erased history fibres are structurally abelian: the oriented Cayley frame has
-stabiliser exactly $C_4$, the fibre over a $b$-shadow with $r$ zero-runs is exactly
-$(\mathbb{Z}_2)^r$, and every canonical induction of the history space yields only
-near-regular multiplicities with no privileged $M_2(\C)$ factor.
+Second, the erased history fibres are structurally abelian: the symmetric Cayley frame
+has stabiliser exactly $C_4$, the fibre over a $b$-shadow with $r$ zero-runs is
+canonically a torsor under the abelian run-flip group $(\mathbb{Z}_2)^r$, and every
+canonical induction of the history space yields only near-regular multiplicities with no
+privileged $M_2(\C)$ factor.
 Third, the flip-antisymmetric fibre line does transport to the parity-odd operator sector,
 but the two resulting Hermitian axes $i(\AX\pm\AY)$ are exchanged by a semilinear
 automorphism of the cocycle-enriched Heisenberg--Weil datum, implemented by the deposited
 antiunitary $RK$; no deposited datum selects one axis, and the coordinate formula that
 does is conditional on an oriented central/Weyl pinning that is itself an additional datum.
-Fourth, and centrally: the projective channel acts on amplitudes as a conditional
-expectation $P$, and for every downstream linear map $Q$ one has
-$Pv=0\Rightarrow QPv=0$, so no tower of sequential projections or subsequent linear
-processing can recover the alternating fibre character erased at the first stratum.
-The corollary is an architectural dichotomy: any realisation of the history-derived odd
-operator requires a parallel channel from the pre-projection space together with an
-independent orientation of the central and Weyl generators --- two new axioms, hence an
-extension architecture rather than a derivation of the deposited corpus.
+Fourth, and centrally: the canonical record quotient $\pi$ annihilates every intra-fibre
+difference and satisfies $\pi v=0\Rightarrow Q\pi v=0$ for every downstream linear map
+$Q$; the amplitude-level conditional expectations of the channel annihilate the
+correspondingly $\mu$-centred vectors for every non-degenerate measure, so no tower of
+sequential projections or subsequent linear processing can recover the alternating fibre
+character erased at the first stratum.
+The corollary is an architectural dichotomy for the history-fibre route: realising the
+history-derived odd operator requires a parallel channel from the pre-projection space
+together with an independent orientation of the central and Weyl generators --- two new
+ingredients, or one new axiom supplying both; either way an extension architecture
+rather than a derivation of the deposited corpus.
 
 \noindent\textbf{Interpretive status.}
-All results are finite, exact, and machine-certified by three archived scripts.
-The note closes derivation routes; it does not exclude an explicitly axiomatised parallel
-channel, and it leaves the fermionic multiplicity target itself untouched and open.
+All computational claims are machine-certified by three archived scripts; mathematical
+statements are proved here or imported with explicit citations.
+The note closes the two deposited candidate routes; it does not exclude an explicitly
+axiomatised parallel channel, nor an independent new multiplicity carrier outside the
+deposited corpus, and it leaves the fermionic multiplicity target itself untouched and
+open.
 \end{abstract}
 
 \noindent\textbf{Keywords.}
@@ -138,15 +145,16 @@ The results are negative in a structured way.
   by the parity projectors, so no non-abelian connected action commutes with the Weil
   action on the carrier itself (Section~\ref{sec:no-lift}).
   \item The erased fibres are abelian and their canonical inductions are structureless:
-  frame stabiliser $C_4$, fibre gauge $(\mathbb{Z}_2)^r$, near-regular induced
-  multiplicities (Section~\ref{sec:fibres}).
+  frame stabiliser $C_4$, canonical $(\mathbb{Z}_2)^r$ torsor structure on each fibre,
+  near-regular induced multiplicities (Section~\ref{sec:fibres}).
   \item The alternating fibre line transports to the protected odd operator sector, but
   the two candidate odd Hermitian axes are exchanged by a semilinear automorphism of the
   cocycle-enriched datum; no natural selector exists (Section~\ref{sec:axes}).
-  \item No sequential re-entry exists: the channel acts as a conditional expectation $P$,
-  and $Pv=0\Rightarrow QPv=0$ for every downstream linear $Q$, so the erased alternating
-  character is unrecoverable by any projection tower
-  (Section~\ref{sec:no-reentry}).
+  \item No sequential re-entry exists: the record quotient satisfies
+  $\pi v=0\Rightarrow Q\pi v=0$ for every downstream linear $Q$, and the channel's
+  conditional expectations annihilate the $\mu$-centred fibre differences for every
+  non-degenerate measure, so the erased alternating character is unrecoverable by any
+  projection tower (Section~\ref{sec:no-reentry}).
 \end{enumerate}
 
 The paper separates three epistemic levels.
@@ -171,7 +179,8 @@ Table~\ref{tab:chain} summarises the full obstruction chain with its certificate
 \begin{table}[ht]
   \centering
   \caption{The obstruction chain closed by the corpus and by this note.
-  Status: P = proved here; C = machine-certified here; D = deposited upstream.}
+  Status: P = proved here; C = machine-certified here; A = corpus audit;
+  D = deposited upstream.}
   \label{tab:chain}
   \renewcommand{\arraystretch}{1.25}
   \small
@@ -184,16 +193,16 @@ Table~\ref{tab:chain} summarises the full obstruction chain with its certificate
     P (Thm.~\ref{thm:abelian-commutant}) \\
     Frame rigidity & alphabet stabiliser exactly $C_4$ &
     P (Lem.~\ref{lem:frame-stabiliser}) \\
-    Fibre gauge & erased fibre carries exactly $(\mathbb{Z}_2)^r$ &
+    Fibre torsor & erased fibre: canonical $(\mathbb{Z}_2)^r$ torsor &
     P (Prop.~\ref{prop:fibre-gauge}) \\
     Induction abundance & no privileged $M_2(\C)$ factor &
     P (Prop.~\ref{prop:abundance}) \\
     Axis exchange & $RK$ exchanges $i(\AX\pm\AY)$ &
     P/C (Thm.~\ref{thm:exchanger}) \\
-    Sequential re-entry & $Pv=0\Rightarrow QPv=0$ &
+    Sequential re-entry & $\pi v=0\Rightarrow Q\pi v=0$ &
     P (Thm.~\ref{thm:no-reentry}) \\
     Lever audit & O33: codomain only; EBJ: consumer only &
-    C (Props.~\ref{prop:o33-lever},~\ref{prop:ebj-lever}) \\
+    A (Props.~\ref{prop:o33-lever},~\ref{prop:ebj-lever}) \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -363,26 +372,27 @@ induction from $C_4$.
   Frobenius reciprocity gives~\eqref{eq:shadow-mult}.
 \end{proof}
 
-\begin{proposition}[Abelian fibre gauge]
+\begin{proposition}[Abelian fibre torsor]
   \label{prop:fibre-gauge}
   Flipping the sign of one maximal zero-run is a channel-preserving involution of the
-  history space.
-  The canonical symmetry group of the fibre over a shadow with $r$ runs is exactly the
-  abelian group $(\mathbb{Z}_2)^r$ generated by these flips; the frame rotation moves
-  the shadow and adds no fibre-preserving element.
+  history space, and distinct flips commute.
+  The run-flip group $(\mathbb{Z}_2)^r$ acts freely and transitively on the fibre over
+  a shadow with $r$ runs: the fibre is canonically a torsor under this abelian group.
+  The frame rotation moves the shadow and contributes no fibre-preserving element.
 \end{proposition}
 
 \begin{proof}
   A per-run flip preserves the emission sequence and non-backtracking by
   Proposition~\ref{prop:fibre-structure}, and distinct flips commute because they act on
   disjoint letters.
-  Any channel symmetry fixing the shadow permutes its fibre $\{\pm1\}^r$ compatibly with
-  the run structure, hence lies in the flip group.
+  By the same proposition the fibre is the set of run-sign assignments, on which the
+  flip group acts by translation, hence freely and transitively.
 \end{proof}
 
 Together with Corollary~\ref{cor:no-lift}, Propositions~\ref{prop:abundance}
 and~\ref{prop:fibre-gauge} close the direct multiplicity route: the fibre supplies
-indexed copies, but no non-abelian action on them, and its canonical completions are
+indexed copies with a canonical abelian torsor structure, no non-abelian action is
+forced on them, and the canonical completions of the history space are
 representation-theoretically structureless.
 
 \section{The Alternating Line and the Two-Axis Ambiguity}
@@ -462,31 +472,56 @@ The central theorem excludes every sequential construction.
 
 \begin{theorem}[No sequential re-entry]
   \label{thm:no-reentry}
-  Let $P$ be any linear map on the history space that is constant on the fibres of the
-  retained record --- in particular the amplitude-level conditional expectation of the
-  canonical channel~\cite{Beau2026pce}.
-  Then $P$ annihilates every flip-alternating fibre vector, while the endpoint transport
-  \eqref{eq:alternating-transport} is non-zero on it.
-  Consequently, for every downstream linear map $Q$,
+  Let $\pi\colon\C[\mathrm{Hist}_n]\to\C[\mathrm{Records}_n]$ be the canonical record
+  quotient, the linearisation of the map sending a history to its retained record.
+  Then $\pi$ annihilates every intra-fibre difference --- in particular every
+  flip-alternating fibre vector --- while the endpoint transport
+  \eqref{eq:alternating-transport} is non-zero on such vectors, so no endpoint-odd map
+  factors through the record.
+  Moreover, for every downstream linear map $Q$,
   \begin{equation}
-    Pv=0\ \Longrightarrow\ QPv=0,
+    \pi v=0\ \Longrightarrow\ Q\pi v=0,
     \label{eq:no-reentry}
   \end{equation}
-  so no composition $Q_k\cdots Q_1P$ of subsequent linear maps, second projections, or
-  conditional expectations recovers the alternating character, and no endpoint-odd map
-  factors through the retained record.
+  so no composition $Q_k\cdots Q_1\pi$ of subsequent linear maps, second projections,
+  or conditional expectations recovers the alternating character.
 \end{theorem}
 
 \begin{proof}
-  A fibre-constant map sends the two members of the length-one fibre $\{X,X^{-1}\}$ to
-  the same value, so their difference maps to zero; the same holds for every
-  flip-alternating vector because alternation is odd under some flip while $P$ is even
-  under all of them.
-  The transport~\eqref{eq:alternating-transport} equals $\AX\neq0$ on that difference,
-  so it does not factor through $P$.
+  The quotient sends both members of a fibre to the same record basis vector, so every
+  intra-fibre difference maps to zero, and the
+  transport~\eqref{eq:alternating-transport} equals $\AX\neq0$ on the length-one
+  alternating vector.
   Implication~\eqref{eq:no-reentry} is linearity, and it propagates along any tower by
   induction.
 \end{proof}
+
+\begin{proposition}[Conditional expectations of arbitrary non-degenerate measures]
+  \label{prop:conditional-expectation}
+  Let $P_\mu=E_\mu[\,\cdot\,|\mathcal{F}_{\mathrm{rec}}]$ be the amplitude-level
+  conditional expectation of the canonical channel~\cite{Beau2026pce}, for any
+  non-degenerate measure $\mu$ on histories.
+  Its range consists of fibre-constant vectors and its kernel is spanned by the
+  $\mu$-centred intra-fibre differences.
+  Under the uniform measure the flip-alternating vector itself lies in $\ker P_\mu$;
+  under a general $\mu$ its $\mu$-centred version does.
+  Implication~\eqref{eq:no-reentry} holds verbatim with $P_\mu$ in place of $\pi$, and
+  the endpoint transport factors through $P_\mu$ for no choice of $\mu$.
+\end{proposition}
+
+\begin{proof}
+  On a fibre $F$ the value of $P_\mu f$ is the $\mu$-average of $f$ over $F$, so
+  $\ker P_\mu|_{F}=\{v:\sum_{\gamma\in F}\mu(\gamma)v_\gamma=0\}$ is the span of the
+  $\mu$-centred differences, and the uniform case contains the alternating vector
+  itself.
+  On the length-one fibre, the transport of the $\mu$-centred alternating vector has
+  $R$-odd part exactly $\AX\neq0$, because the centring term is a multiple of the
+  $R$-even operator $W_c(1,0)+W_c(-1,0)$; hence the transport does not annihilate
+  $\ker P_\mu$ and cannot factor through $P_\mu$.
+\end{proof}
+
+The sequential no-go is therefore measure-independent; what depends on the measure is
+only which explicit vector of the fibre is annihilated.
 
 The theorem is elementary; its force is architectural.
 It applies to every lever the corpus offers, and the three deposited candidates fail it
@@ -496,26 +531,40 @@ in complementary ways.
   \label{prop:o33-lever}
   The internal-carrier isomorphism $\delta_v\mapsto W_c(v)$ of~\cite{Beau2026a37}
   identifies $\C[\Fq^2]$ with $\End(\Vc)$ as conjugation modules and exhibits
-  $\Dminus$ inside a deposited operator algebra.
-  Its source is the phase-space label, not a history, a shadow, or an erased fibre; and
-  the channel identifies $[X]$ with $[X^{-1}]$ while the endpoint transport separates
-  them, so the transport cannot factor through the channel record.
-  O33 therefore supplies the codomain of a would-be re-entry and neither the re-entry
-  morphism nor an orientation of the pair $(Z,w)$.
+  $\Dminus$ inside a deposited operator algebra, but it defines no map from histories,
+  from the record quotient, or from an erased fibre, and it supplies no orientation of
+  the pair $(Z,w)$.
 \end{proposition}
+
+\begin{proof}[Audit]
+  The source of the isomorphism is the phase-space label $v=(a,b)$; the central
+  coordinate enters only as a scalar phase and is absent from the Weyl permutation
+  carrier.
+  The record identifies $[X]$ with $[X^{-1}]$ while the endpoint transport separates
+  them, so by Theorem~\ref{thm:no-reentry} the transport cannot factor through the
+  channel record.
+  Finally the deposited O33 operator class is parity-even, so the semilinear exchanger
+  of Theorem~\ref{thm:exchanger} remains available and no orientation is supplied.
+\end{proof}
 
 \begin{proposition}[EBJ consumes, it does not lift]
   \label{prop:ebj-lever}
-  The eliminated-block jet~\cite{Beau2026ebj} starts from a Lorentzian projector family
-  $1-P(s)=Q_0+sQ_1+\cdots$ with a given antiunitary chiral grading $J_\Pi$, and its odd
-  generator is the transported equivariance-defect rate.
-  No deposited map sends a history, a shadow, a central register, or an element of
-  $\Dminus$ into $P(s)$ or its tangent; and the chiral grading $J_\Pi$ and the
-  phase-space antiunitary $RK$ of Theorem~\ref{thm:exchanger} are differently typed,
-  with no transport theorem identifying their orientations.
-  EBJ can consume an already constructed odd deformation; it neither re-enters the fibre
-  nor orients the axes.
+  The eliminated-block jet~\cite{Beau2026ebj} defines no map from a history, a shadow, a
+  central register, or an element of $\Dminus$ into its projector family
+  $1-P(s)=Q_0+sQ_1+\cdots$ or its tangent, and it identifies no orientation transport
+  between its chiral grading $J_\Pi$ and the phase-space antiunitary $RK$.
 \end{proposition}
+
+\begin{proof}[Audit]
+  The jet starts from the Lorentzian projector family and a given antiunitary chiral
+  grading $J_\Pi$, and its odd generator is the transported equivariance-defect rate:
+  each of these inputs is assumed by the deposited statements, not constructed from the
+  channel.
+  The gradings $J_\Pi$ and $RK$ of Theorem~\ref{thm:exchanger} are differently typed
+  objects, and no deposited transport theorem identifies their orientations.
+  EBJ can therefore consume an already constructed odd deformation; it neither re-enters
+  the fibre nor orients the axes.
+\end{proof}
 
 \begin{corollary}[Architectural dichotomy]
   \label{cor:dichotomy}
@@ -524,14 +573,18 @@ in complementary ways.
   (Proposition~\ref{prop:fibre-structure}), and every deposited bridge between them is
   closed (Theorems~\ref{thm:exchanger} and~\ref{thm:no-reentry},
   Proposition~\ref{prop:ebj-lever}).
-  Any realisation must add, as explicit new axioms:
+  Any realisation along this route must add, explicitly:
   \begin{enumerate}[label=(\alph*)]
     \item a parallel linear channel from the pre-projection history or substrate space,
     refining the observable record rather than post-processing it; and
     \item an orientation of the central and Weyl generators distinguishing $(Z,w)$ from
     $(-Z,w^{-1})$.
   \end{enumerate}
-  Such a construction would be an extension architecture, not a derivation.
+  These are two new ingredients --- two new axioms, or one new axiom supplying both.
+  Either way the construction is an extension architecture, not a derivation; and the
+  dichotomy concerns the history-fibre route, not every conceivable realisation of the
+  multiplicity target: an independent new carrier or tensor factor outside the deposited
+  corpus remains a distinct extension architecture, unconstrained by this note.
 \end{corollary}
 
 \section{Computational Certification}
@@ -555,9 +608,11 @@ selector with its $\mathbb{Z}_2$-robustness and $c$-oddness, and the single-line
 obstruction of Remark~\ref{rem:support} at lengths two and three.
 
 \texttt{front\_joint\_reentry\_audit.py} certifies Section~\ref{sec:no-reentry} in exact
-rational arithmetic: the conditional expectation annihilates the alternating two-point
-fibre vector while the endpoint-odd functional does not, representative downstream maps
-obey~\eqref{eq:no-reentry}, and the automorphism property of $\sigma_X$ is checked
+rational arithmetic: the uniform conditional expectation annihilates the alternating
+two-point fibre vector while the endpoint-odd functional does not; a non-uniform
+conditional expectation does not annihilate the alternating vector but annihilates its
+$\mu$-centred version, whose kernel line is computed exactly; representative downstream
+maps obey~\eqref{eq:no-reentry}; and the automorphism property of $\sigma_X$ is checked
 exhaustively over all of $\Heis$ at $q=5$.
 
 All assertions pass; no numerical claim in this note exceeds what the scripts check or
@@ -585,12 +640,15 @@ given an oriented parallel channel, the erased fibre supplies the odd Harper ope
 and the known Gauss-sum computations orient every protected doublet; without it, the
 protected sector stays protected.
 
-The open frontier is therefore a single, explicitly axiomatic question: whether the
-substrate admits a parallel projection channel --- a second observable record not
+The open frontier of the history-fibre route is therefore explicitly axiomatic: whether
+the substrate admits a parallel projection channel --- a second observable record not
 factoring through the canonical one --- carrying the alternating fibre character and an
 orientation of $(Z,w)$.
 That question is upstream of the finite stratum studied here, and nothing in this note
 constrains its answer.
+Distinct extension architectures --- an independent multiplicity carrier or tensor
+factor added to the corpus --- are likewise unconstrained: this note closes the two
+deposited candidates, not every conceivable realisation of the target.
 
 \newpage
 \bibliographystyle{plain}

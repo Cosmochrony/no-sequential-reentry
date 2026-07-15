@@ -263,9 +263,10 @@ def part_E(n_max=8):
                 ok = ok and all(img[i + 1] != INV[img[i]] for i in range(n - 1))
                 assert ok, (wrd, k, img)
     print(f"  Per-run sign flips are channel-preserving involutions for all n <= {n_max}:")
-    print("  the canonical gauge group of the erased fibre over a shadow with r runs")
-    print("  is exactly (Z2)^r, abelian.  The C4 frame rotation moves the shadow, so")
-    print("  the fibre-preserving canonical group stays (Z2)^r.")
+    print("  the abelian run-flip group (Z2)^r acts freely and transitively on the fibre")
+    print("  over a shadow with r runs, so the fibre is canonically a torsor under it.")
+    print("  The C4 frame rotation moves the shadow and contributes no fibre-preserving")
+    print("  element.  (The script does not claim exhaustion of all channel symmetries.)")
     print("  KS-3 FIRES in its direct form: no forced non-abelian action on a fibre.")
 
 

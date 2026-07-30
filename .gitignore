@@ -1,2 +1,20 @@
 out/
 *.log
+
+# Common build-artefact baseline
+.DS_Store
+**/.DS_Store
+.idea/
+.venv/
+pdfs/
+media/
+**/__pycache__/
+*.py[cod]
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
